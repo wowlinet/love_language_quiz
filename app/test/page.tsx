@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { questions, loveLanguageDescriptions, type QuizResult } from '@/lib/quizData'
 import Link from 'next/link'
+import confetti from 'canvas-confetti'
 
 export default function TestPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -10,6 +11,7 @@ export default function TestPage() {
   const [showResult, setShowResult] = useState(false)
   const [results, setResults] = useState<QuizResult[]>([])
   const [showCopyNotification, setShowCopyNotification] = useState(false)
+  const [animatePercentages, setAnimatePercentages] = useState(false)
 
   useEffect(() => {
     // Load previous results from localStorage if available
@@ -18,6 +20,15 @@ export default function TestPage() {
       setResults(JSON.parse(savedResults))
     }
   }, [])
+
+  useEffect(() => {
+    // Trigger confetti when results are shown
+    if (showResult && results.length > 0) {
+      triggerConfetti()
+      // Delay percentage animation for visual effect
+      setTimeout(() => setAnimatePercentages(true), 500)
+    }
+  }, [showResult, results])
 
   const handleAnswer = (language: string) => {
     const newAnswers = [...answers, language]
@@ -53,6 +64,53 @@ export default function TestPage() {
     setCurrentQuestion(0)
     setAnswers([])
     setShowResult(false)
+    setAnimatePercentages(false)
+  }
+
+  const triggerConfetti = () => {
+    const duration = 3000
+    const animationEnd = Date.now() + duration
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 }
+
+    const randomInRange = (min: number, max: number) => {
+      return Math.random() * (max - min) + min
+    }
+
+    const interval = window.setInterval(() => {
+      const timeLeft = animationEnd - Date.now()
+
+      if (timeLeft <= 0) {
+        return clearInterval(interval)
+      }
+
+      const particleCount = 50 * (timeLeft / duration)
+
+      // Fire confetti from left side
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+        colors: ['#f43f5e', '#ec4899', '#8b5cf6', '#6366f1', '#3b82f6']
+      })
+
+      // Fire confetti from right side
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+        colors: ['#f43f5e', '#ec4899', '#8b5cf6', '#6366f1', '#3b82f6']
+      })
+    }, 250)
+
+    // Additional burst effect
+    setTimeout(() => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#f43f5e', '#ec4899', '#8b5cf6']
+      })
+    }, 300)
   }
 
   const handleShare = async () => {
@@ -112,14 +170,14 @@ export default function TestPage() {
         )}
 
         {/* Celebration Banner */}
-        <div className="text-center mb-8">
-          <div className="inline-block bg-gradient-to-r from-rose-500 to-pink-500 text-white px-6 py-3 rounded-full mb-4">
+        <div className="text-center mb-8 animate-fade-in-up">
+          <div className="inline-block bg-gradient-to-r from-rose-500 to-pink-500 text-white px-6 py-3 rounded-full mb-4 animate-bounce-slow">
             <span className="text-2xl font-bold">🎉 Quiz Completed!</span>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-4xl font-bold text-gray-900 mb-2 animate-fade-in-up animation-delay-200">
             Your Love Language Results
           </h1>
-          <p className="text-gray-600">Discover how you express and receive love</p>
+          <p className="text-gray-600 animate-fade-in-up animation-delay-400">Discover how you express and receive love</p>
         </div>
 
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
@@ -153,30 +211,40 @@ export default function TestPage() {
               <div className="space-y-5">
                 {results.map((result, index) => {
                   const percentage = (result.score / questions.length) * 100
+                  const animatedPercentage = animatePercentages ? percentage : 0
                   return (
                     <div
                       key={result.language}
-                      className={`p-4 rounded-xl ${
+                      className={`p-4 rounded-xl transform transition-all duration-500 hover:scale-102 ${
                         index === 0 ? 'bg-rose-50 border-2 border-rose-200' : 'bg-gray-50'
                       }`}
+                      style={{
+                        animationDelay: `${index * 150}ms`,
+                        opacity: animatePercentages ? 1 : 0,
+                        transform: animatePercentages ? 'translateY(0)' : 'translateY(20px)',
+                        transition: 'all 0.5s ease-out'
+                      }}
                     >
                       <div className="flex justify-between mb-2">
                         <span className="font-semibold text-gray-800 text-lg">
-                          {index === 0 && <span className="mr-2">👑</span>}
+                          {index === 0 && <span className="mr-2 animate-pulse">👑</span>}
                           {result.language}
                         </span>
-                        <span className="font-bold text-gray-700">
-                          {result.score}/{questions.length} ({percentage.toFixed(0)}%)
+                        <span className="font-bold text-gray-700 transition-all duration-700">
+                          {result.score}/{questions.length} ({animatedPercentage.toFixed(0)}%)
                         </span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
                         <div
-                          className={`h-4 rounded-full transition-all duration-1000 ease-out ${
+                          className={`h-4 rounded-full transition-all duration-1500 ease-out ${
                             index === 0
                               ? 'bg-gradient-to-r from-rose-500 to-pink-500'
                               : 'bg-gradient-to-r from-rose-300 to-pink-300'
                           }`}
-                          style={{ width: `${percentage}%` }}
+                          style={{
+                            width: `${animatedPercentage}%`,
+                            transitionDelay: `${index * 100}ms`
+                          }}
                         />
                       </div>
                     </div>

@@ -16,12 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Love Language Quiz - Discover Your Love Language",
-  description: "Take our comprehensive Love Language Quiz to discover how you express and receive love. Learn about the 5 love languages and improve your relationships.",
-  keywords: "love language, quiz, relationships, love languages test, couples quiz",
+  title: "Love Language Quiz – Discover Your 5 Love Languages Free Online Test",
+  description: "Take the most popular love language quiz online and find out what your primary love language is. Learn how the 5 love languages—words of affirmation, quality time, gifts, acts of service, and physical touch—can improve your relationships. Start your free quiz today.",
+  keywords: "love language quiz, love languages test, couples quiz, free online test, 5 love languages",
   openGraph: {
-    title: "Love Language Quiz - Discover Your Love Language",
-    description: "Take our comprehensive Love Language Quiz to discover how you express and receive love.",
+    title: "Love Language Quiz – Discover Your 5 Love Languages Free Online Test",
+    description: "Take the most popular love language quiz online and find out what your primary love language is. Learn how the 5 love languages—words of affirmation, quality time, gifts, acts of service, and physical touch—can improve your relationships. Start your free quiz today.",
     type: "website",
   },
 };
