@@ -8,7 +8,10 @@ export default function Navigation() {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'Test', path: '/test' },
+    { name: 'Love Language', path: '/test' },
+    { name: 'Am I in Love?', path: '/am-i-in-love' },
+    { name: 'Crush Quiz', path: '/crush-quiz' },
+    { name: 'Does He Love Me?', path: '/does-he-love-me' },
     { name: 'Articles', path: '/articles' },
   ]
 
