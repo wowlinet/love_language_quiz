@@ -4,14 +4,25 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-rose-500 to-pink-500 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section 
+        className="relative text-white py-20 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/love_language_quiz_tiny.jpg')"
+        }}
+      >
+        {/* Background overlay for text readability */}
+        <div 
+          className="absolute inset-0" 
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
+        ></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-6">
               Discover Your Love Language with Our Free Quiz
             </h1>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Take the Love Language Quiz online and find out how you give and receive love. In just 5 minutes, you’ll discover your primary love language and learn practical tips to improve your relationships.
+              Take the Love Language Quiz online and find out how you give and receive love. In just 5 minutes, you&apos;ll discover your primary love language and learn practical tips to improve your relationships.
             </p>
             <Link
               href="/test"
