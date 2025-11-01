@@ -437,69 +437,77 @@ export default function SoulmatePage() {
   const question = soulmateQuestions[currentQuestion]
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      {/* Progress Bar */}
-      <div className="mb-8">
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-sm font-medium text-gray-700">
-            Question {currentQuestion + 1} of {soulmateQuestions.length}
-          </span>
-          <span className="text-sm font-medium text-gray-700">
-            {Math.round(progress)}% Complete
-          </span>
-        </div>
-        <div className="w-full bg-gray-200 rounded-full h-3">
-          <div
-            className="bg-gradient-to-r from-rose-500 to-pink-500 h-3 rounded-full transition-all duration-500 ease-out"
-            style={{ width: `${progress}%` }}
-          ></div>
-        </div>
-      </div>
-
-      {/* Question Card */}
-      <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
-        <div className="text-center mb-8">
-          <div className="inline-block bg-gradient-to-r from-rose-100 to-pink-100 rounded-full p-4 mb-4">
-            <span className="text-4xl">
-              {question.category === 'communication' ? '💬' :
-               question.category === 'values' ? '🎯' :
-               question.category === 'lifestyle' ? '🌟' :
-               question.category === 'emotional' ? '💖' :
-               '🔮'}
-            </span>
-          </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-            {question.question}
-          </h2>
-          <p className="text-gray-600 text-sm uppercase tracking-wide font-medium">
-            {question.category} • Question {currentQuestion + 1}
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          {question.options.map((option, index) => (
-            <button
-              key={index}
-              onClick={() => handleAnswer(option)}
-              className="w-full text-left p-6 rounded-xl border-2 border-gray-200 hover:border-rose-300 hover:bg-gradient-to-r hover:from-rose-50 hover:to-pink-50 transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
-            >
-              <div className="flex items-center">
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold mr-4 group-hover:scale-110 transition-transform duration-300">
-                  {String.fromCharCode(65 + index)}
+    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 py-4 md:py-6">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-4 md:p-6 border border-rose-100">
+          {/* Progress Section */}
+          <div className="mb-4">
+            <div className="flex justify-between items-center mb-2">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full shadow-md">
+                  <span className="text-white font-bold text-xs">{currentQuestion + 1}</span>
                 </div>
-                <span className="text-gray-800 font-medium text-lg leading-relaxed">
-                  {option.text}
-                </span>
+                <div>
+                  <h2 className="text-sm font-bold text-gray-800">
+                    Question {currentQuestion + 1} of {soulmateQuestions.length}
+                  </h2>
+                </div>
               </div>
-            </button>
-          ))}
-        </div>
+              <span className="text-lg font-bold bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">
+                {Math.round(progress)}%
+              </span>
+            </div>
+            <div className="relative w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+              <div
+                className="bg-gradient-to-r from-rose-500 to-pink-500 h-2 rounded-full transition-all duration-500 ease-out relative"
+                style={{ width: `${progress}%` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
+              </div>
+            </div>
+          </div>
 
-        {/* Navigation hint */}
-        <div className="text-center mt-8">
-          <p className="text-gray-500 text-sm">
-            Choose the option that resonates most with you
-          </p>
+          {/* Question */}
+          <div className="text-center mb-4">
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full mb-3 shadow-lg">
+              <span className="text-3xl">
+                {question.category === 'communication' ? '💬' :
+                 question.category === 'values' ? '🎯' :
+                 question.category === 'lifestyle' ? '🌟' :
+                 question.category === 'emotional' ? '💖' :
+                 '🔮'}
+              </span>
+            </div>
+            <h2 className="text-xl md:text-2xl font-bold mb-2 leading-tight bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+              {question.question}
+            </h2>
+          </div>
+
+          {/* Options */}
+          <div className="space-y-2">
+            {question.options.map((option, index) => (
+              <button
+                key={index}
+                onClick={() => handleAnswer(option)}
+                className="group relative w-full text-left p-3 md:p-4 bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 rounded-xl hover:border-rose-400 hover:shadow-lg transition-all duration-300 hover:scale-[1.01] overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-50/0 to-pink-50/0 group-hover:from-rose-50 group-hover:to-pink-50 transition-all duration-300"></div>
+                <div className="relative flex items-center gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-rose-400 group-hover:to-pink-500 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <span className="text-xs font-bold text-gray-600 group-hover:text-white transition-colors">
+                      {String.fromCharCode(65 + index)}
+                    </span>
+                  </div>
+                  <span className="text-gray-800 group-hover:text-gray-900 font-medium text-sm md:text-base leading-snug flex-grow">
+                    {option.text}
+                  </span>
+                  <svg className="flex-shrink-0 w-5 h-5 text-gray-300 group-hover:text-rose-500 transition-all duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>

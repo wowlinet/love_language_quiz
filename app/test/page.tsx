@@ -292,53 +292,75 @@ export default function TestPage() {
         )}
 
         {/* Celebration Banner */}
-        <div className="text-center mb-8 animate-fade-in-up">
-          <div className="inline-block bg-gradient-to-r from-rose-500 to-pink-500 text-white px-6 py-3 rounded-full mb-4 animate-bounce-slow">
-            <span className="text-2xl font-bold">🎉 Quiz Completed!</span>
+        <div className="text-center mb-12 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-rose-500 to-pink-500 text-white px-8 py-4 rounded-full mb-6 shadow-lg animate-bounce-slow">
+            <span className="text-3xl">🎉</span>
+            <span className="text-2xl font-bold">Quiz Completed!</span>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-2 animate-fade-in-up animation-delay-200">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4 animate-fade-in-up animation-delay-200">
             Your Love Language Results
           </h1>
-          <p className="text-gray-600 animate-fade-in-up animation-delay-400">Discover how you express and receive love</p>
+          <p className="text-xl text-gray-600 animate-fade-in-up animation-delay-400">Discover how you express and receive love</p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
           {/* Primary Result - Hero Section */}
-          <div className="bg-gradient-to-br from-rose-50 to-pink-50 p-8 md:p-12 border-b-4 border-rose-500">
-            <div className="text-center">
-              <div className="inline-block mb-4">
-                <span className="text-6xl">🏆</span>
+          <div className="relative bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 p-10 md:p-16 border-b-4 border-rose-500 overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-rose-200/20 rounded-full -translate-y-32 translate-x-32 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-200/20 rounded-full translate-y-32 -translate-x-32 blur-3xl"></div>
+
+            <div className="relative text-center">
+              <div className="inline-flex items-center justify-center w-24 h-24 bg-rose-400 rounded-full mb-6 shadow-xl">
+                <span className="text-5xl">🏆</span>
               </div>
-              <h2 className="text-2xl font-semibold mb-3 text-gray-700">
-                Your Primary Love Language
-              </h2>
-              <p className="text-5xl font-bold text-rose-600 mb-6">
-                {languageInfo.title}
-              </p>
-              <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
-                {languageInfo.description}
-              </p>
+              <div className="space-y-2 mb-6">
+                <p className="text-sm uppercase tracking-widest font-semibold text-rose-600/80">
+                  Your Primary Love Language
+                </p>
+                <h2 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent leading-tight">
+                  {languageInfo.title}
+                </h2>
+              </div>
+              <div className="max-w-3xl mx-auto">
+                <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
+                  {languageInfo.description}
+                </p>
+                <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg">
+                  <span className="text-3xl font-bold text-rose-600">
+                    {((results[0].score / questions.length) * 100).toFixed(0)}%
+                  </span>
+                  <span className="text-gray-600 font-medium">Match Score</span>
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="p-8 md:p-12">
             {/* Complete Results Breakdown */}
-            <div className="mb-10">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900 flex items-center">
-                <span className="bg-rose-100 text-rose-600 rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">
-                  📊
-                </span>
-                Complete Results Breakdown
-              </h3>
-              <div className="space-y-5">
+            <div className="mb-12">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-500 rounded-xl shadow-lg">
+                  <span className="text-2xl">📊</span>
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900">
+                    Complete Results Breakdown
+                  </h3>
+                  <p className="text-gray-600">All five love languages ranked by your responses</p>
+                </div>
+              </div>
+              <div className="space-y-6">
                 {results.map((result, index) => {
                   const percentage = (result.score / questions.length) * 100
                   const animatedPercentage = animatePercentages ? percentage : 0
                   return (
                     <div
                       key={result.language}
-                      className={`p-4 rounded-xl transform transition-all duration-500 hover:scale-102 ${
-                        index === 0 ? 'bg-rose-50 border-2 border-rose-200' : 'bg-gray-50'
+                      className={`group relative p-6 rounded-2xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-xl ${
+                        index === 0
+                          ? 'bg-gradient-to-br from-rose-50 to-pink-50 border-2 border-rose-300 shadow-lg'
+                          : 'bg-gray-50 border-2 border-gray-200 hover:border-rose-200'
                       }`}
                       style={{
                         animationDelay: `${index * 150}ms`,
@@ -347,27 +369,51 @@ export default function TestPage() {
                         transition: 'all 0.5s ease-out'
                       }}
                     >
-                      <div className="flex justify-between mb-2">
-                        <span className="font-semibold text-gray-800 text-lg">
-                          {index === 0 && <span className="mr-2 animate-pulse">👑</span>}
-                          {result.language}
-                        </span>
-                        <span className="font-bold text-gray-700 transition-all duration-700">
-                          {result.score}/{questions.length} ({animatedPercentage.toFixed(0)}%)
-                        </span>
+                      {index === 0 && (
+                        <div className="absolute -top-3 -right-3 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg flex items-center gap-1">
+                          <span>👑</span> Top Match
+                        </div>
+                      )}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
+                        <div className="flex items-center gap-3">
+                          <div className={`flex items-center justify-center w-10 h-10 rounded-full text-xl ${
+                            index === 0 ? 'bg-rose-500 text-white' : 'bg-gray-200 text-gray-600'
+                          }`}>
+                            {index + 1}
+                          </div>
+                          <span className={`font-bold text-xl ${
+                            index === 0 ? 'text-rose-600' : 'text-gray-800'
+                          }`}>
+                            {result.language}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="text-sm text-gray-600 font-medium">
+                            {result.score}/{questions.length} responses
+                          </span>
+                          <span className={`text-2xl font-bold transition-all duration-700 ${
+                            index === 0 ? 'text-rose-600' : 'text-gray-700'
+                          }`}>
+                            {animatedPercentage.toFixed(0)}%
+                          </span>
+                        </div>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+                      <div className="relative w-full bg-gray-200 rounded-full h-6 overflow-hidden shadow-inner">
                         <div
-                          className={`h-4 rounded-full transition-all duration-1500 ease-out ${
+                          className={`h-6 rounded-full transition-all duration-1500 ease-out relative overflow-hidden ${
                             index === 0
-                              ? 'bg-gradient-to-r from-rose-500 to-pink-500'
+                              ? 'bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500'
                               : 'bg-gradient-to-r from-rose-300 to-pink-300'
                           }`}
                           style={{
                             width: `${animatedPercentage}%`,
                             transitionDelay: `${index * 100}ms`
                           }}
-                        />
+                        >
+                          {index === 0 && (
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   )
@@ -376,79 +422,92 @@ export default function TestPage() {
             </div>
 
             {/* Tips Section */}
-            <div className="mb-10 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-100">
-              <h3 className="text-2xl font-bold mb-4 text-blue-900 flex items-center">
-                <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">
-                  💡
-                </span>
-                Tips for {languageInfo.title}
-              </h3>
-              <ul className="space-y-3">
+            <div className="mb-12 p-8 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-2xl border-2 border-blue-200 shadow-lg">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg">
+                  <span className="text-2xl">💡</span>
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold text-blue-900">
+                    Tips for {languageInfo.title}
+                  </h3>
+                  <p className="text-blue-700">Practical advice to strengthen your relationships</p>
+                </div>
+              </div>
+              <div className="grid gap-4">
                 {languageInfo.tips.map((tip, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="flex-shrink-0 w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs mr-3 mt-0.5">
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 p-4 bg-white/80 backdrop-blur-sm rounded-xl hover:bg-white hover:shadow-md transition-all duration-300 group"
+                  >
+                    <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-xl flex items-center justify-center text-lg font-bold shadow-md group-hover:scale-110 transition-transform">
                       {index + 1}
-                    </span>
-                    <span className="text-gray-700 leading-relaxed">{tip}</span>
-                  </li>
+                    </div>
+                    <span className="text-gray-700 leading-relaxed text-lg pt-1">{tip}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
               <button
                 onClick={handleShare}
-                className="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-lg font-semibold hover:from-green-600 hover:to-emerald-600 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                className="group relative px-6 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl font-semibold hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2 cursor-pointer overflow-hidden"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <svg className="w-6 h-6 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                 </svg>
-                Share Results
+                <span className="relative z-10">Share Results</span>
               </button>
 
               <button
                 onClick={handleInvite}
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                className="group relative px-6 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2 cursor-pointer overflow-hidden"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <svg className="w-6 h-6 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
-                Invite Friends
+                <span className="relative z-10">Invite Friends</span>
               </button>
 
               <button
                 onClick={resetQuiz}
-                className="px-6 py-3 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-lg font-semibold hover:from-rose-600 hover:to-pink-600 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                className="group relative px-6 py-4 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-xl font-semibold hover:from-rose-600 hover:to-pink-600 transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2 cursor-pointer overflow-hidden"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <svg className="w-6 h-6 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
-                Retake Quiz
+                <span className="relative z-10">Retake Quiz</span>
               </button>
 
               <Link
                 href="/articles"
-                className="px-6 py-3 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                className="group relative px-6 py-4 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-xl font-semibold hover:from-gray-700 hover:to-gray-800 transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2 cursor-pointer overflow-hidden"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <svg className="w-6 h-6 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
-                Read Articles
+                <span className="relative z-10">Read Articles</span>
               </Link>
             </div>
 
             {/* Info Box */}
-            <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <svg className="h-5 w-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 p-6 rounded-2xl shadow-md">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl shadow-lg">
+                  <svg className="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <div className="ml-3">
-                  <p className="text-sm text-amber-700">
-                    <strong>Note:</strong> Your results are saved locally in your browser. Share them with your partner or friends to learn more about each other!
+                <div className="flex-1">
+                  <h4 className="text-lg font-bold text-amber-900 mb-2">Important Note</h4>
+                  <p className="text-amber-800 leading-relaxed">
+                    Your results are saved locally in your browser. Share them with your partner or friends to learn more about each other and strengthen your relationships! 💕
                   </p>
                 </div>
               </div>
