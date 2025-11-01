@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A Next.js 15 web application that provides an interactive quiz to help users discover their love language. Built with TypeScript, Tailwind CSS V4, and designed for deployment on Vercel.
+A Next.js 15 web application featuring multiple relationship quizzes including the primary Love Language Quiz, plus Soulmate Compatibility, Crush Analysis, and "Am I In Love" assessments. Also includes curated love quotes collections. Built with TypeScript, Tailwind CSS V4, and designed for deployment on Vercel.
 
 ## Commands
 
@@ -30,40 +30,71 @@ Optional Google Analytics tracking via `NEXT_PUBLIC_GA_MEASUREMENT_ID` in `.env.
 
 **Key Routes:**
 - `/` - Landing page
-- `/test` - Quiz flow (client component)
+- `/test` - Love Language Quiz (client component)
+- `/soulmate` - Soulmate Compatibility Quiz
+- `/crush-quiz` - "Does My Crush Like Me?" Quiz
+- `/does-he-love-me` - "Does He Love Me?" Quiz
+- `/am-i-in-love` - "Am I In Love?" Quiz
+- `/quotes-for-her` - Love quotes collection for her
+- `/quotes-for-him` - Love quotes collection for him
 - `/articles` - Article listing
 - `/articles/[slug]` - Dynamic article pages with static generation
 - `/privacy` & `/terms` - Legal pages
 
 ### Quiz System Architecture
 
-**Data Layer** ([lib/quizData.ts](lib/quizData.ts)):
+The application includes multiple quiz types, each with similar patterns but different data models:
+
+**Love Language Quiz** ([lib/quizData.ts](lib/quizData.ts), [app/test/page.tsx](app/test/page.tsx)):
 - Defines `Question` and `QuizResult` interfaces
-- Contains 10 quiz questions, each with 5 options mapping to love languages
+- Contains 10 quiz questions, each with 5 options mapping to love languages (Words of Affirmation, Quality Time, Receiving Gifts, Acts of Service, Physical Touch)
 - Exports `loveLanguageDescriptions` with detailed descriptions and tips for each language
-
-**Quiz Component** ([app/test/page.tsx](app/test/page.tsx)):
-- Client-side component managing quiz state
-- Progress tracking through questions
-- Scores calculated by counting language frequencies across answers
 - Results persisted to localStorage (`loveLanguageResults` and `loveLanguageTestDate`)
-- Confetti celebration using `canvas-confetti` on completion
-- Animated percentage bars with staggered reveal
+
+**Soulmate Compatibility Quiz** ([lib/soulmateQuizData.ts](lib/soulmateQuizData.ts), [app/soulmate/page.tsx](app/soulmate/page.tsx)):
+- 10 questions across 5 categories: communication, values, lifestyle, emotional, future
+- Weighted scoring system (1-4 points per answer)
+- Calculates compatibility percentages across all categories
+- Determines one of 5 soulmate types: Romantic Idealist, Practical Partner, Adventurous Soul, Deep Connector, or Balanced Seeker
+- Includes personalized characteristics, tips, and ideal partner qualities
+- Results saved to localStorage (`soulmateResult`, `soulmateTestDate`)
+
+**Crush Quiz** ([lib/crushQuizData.ts](lib/crushQuizData.ts), [app/crush-quiz/page.tsx](app/crush-quiz/page.tsx)):
+- Score-based quiz analyzing behavioral signs and communication patterns
+- Calculates total score and percentage to determine interest level
+- 6 result levels from "Not Interested" to "Definitely Interested"
+- Results include advice and next steps
+
+**Additional Quizzes** ([lib/loveMeQuizData.ts](lib/loveMeQuizData.ts), [lib/loveQuizData.ts](lib/loveQuizData.ts)):
+- Similar patterns with different questions and result types
+- Each follows the same client-side state management approach
+
+**Common Quiz Patterns:**
+- Client-side components managing quiz state
+- Progress tracking through questions with visual progress bars
+- Confetti celebration using `canvas-confetti` on completion (for positive results)
+- Animated results reveal with staggered animations
 - Share/invite functionality with native Web Share API fallback to clipboard
-- Previous question navigation supported
+- Previous question navigation supported (where applicable)
+- Results persisted to localStorage with timestamps
 
-### Articles System
+### Articles & Content System
 
-**Content Management**:
-- Markdown files in [articles/](articles/) directory with gray-matter frontmatter
+**Articles** ([articles/](articles/) directory):
+- Markdown files with gray-matter frontmatter
 - Required frontmatter: `title`, `description`, `date`, `author`, `slug`
 - Server-side utilities in [lib/articles.ts](lib/articles.ts) for reading/parsing
-
-**Article Rendering** ([app/articles/[slug]/page.tsx](app/articles/[slug]/page.tsx)):
-- Static generation using `generateStaticParams()`
+- Static generation using `generateStaticParams()` in [app/articles/[slug]/page.tsx](app/articles/[slug]/page.tsx)
 - Custom ReactMarkdown components for consistent styling with Tailwind prose classes
 - SEO metadata generated per article via `generateMetadata()`
 - 404 handling via Next.js `notFound()`
+
+**Quotes Collections** ([app/quotes-for-her/](app/quotes-for-her/), [app/quotes-for-him/](app/quotes-for-him/)):
+- Server components for metadata/SEO, with client components (QuotesClient.tsx) for interactive features
+- Quotes data stored in client component state
+- Features: category filtering, search, favorites (localStorage), copy to clipboard, social sharing
+- Categories include romantic, inspirational, cute, deep, funny quotes
+- Native Web Share API with clipboard fallback
 
 ### Styling & Components
 
@@ -89,7 +120,9 @@ import { questions } from '@/lib/quizData'
 import Navigation from '@/components/Navigation'
 ```
 
-## Adding New Articles
+## Adding New Content
+
+### Adding New Articles
 
 1. Create `.md` file in [articles/](articles/) directory
 2. Include frontmatter:
@@ -103,6 +136,30 @@ slug: "article-slug"
 ---
 ```
 3. Article automatically appears in listings and generates static page at `/articles/[slug]`
+
+### Adding New Quizzes
+
+To add a new quiz type, follow the established pattern:
+
+1. **Create quiz data file** in `lib/` (e.g., `lib/newQuizData.ts`):
+   - Define question interfaces with options
+   - Define result types and descriptions
+   - Export calculation function for determining results
+
+2. **Create route directory** in `app/` (e.g., `app/new-quiz/`):
+   - Add `layout.tsx` with SEO metadata
+   - Add `page.tsx` as client component (`'use client'`)
+
+3. **Implement quiz component** following common patterns:
+   - State management for current question, answers, and results
+   - Progress bar showing completion percentage
+   - Landing page before quiz starts (with quiz description and benefits)
+   - Question display with option buttons
+   - Results page with calculated outcomes
+   - localStorage persistence (results and timestamp)
+   - Share/invite functionality
+   - Confetti animation for positive results
+   - Links to related quizzes and content
 
 ## Deployment Notes
 

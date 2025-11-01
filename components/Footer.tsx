@@ -37,6 +37,16 @@ export default function Footer() {
                   Articles
                 </Link>
               </li>
+              <li>
+                <Link href="/quotes-for-her" className="hover:text-rose-400 transition-colors">
+                  Love Quotes for Her
+                </Link>
+              </li>
+              <li>
+                <Link href="/quotes-for-him" className="hover:text-rose-400 transition-colors">
+                  Love Quotes for Him
+                </Link>
+              </li>
             </ul>
           </div>
 
