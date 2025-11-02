@@ -519,50 +519,138 @@ export default function TestPage() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12">
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <div className="mb-6">
-          <div className="flex justify-between items-center mb-2">
-            <h2 className="text-lg font-semibold text-gray-700">
-              Question {currentQuestion + 1} of {questions.length}
-            </h2>
-            <span className="text-sm text-gray-600">{progress.toFixed(0)}%</span>
+    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 py-4 md:py-6">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-4 md:p-6 border border-rose-100">
+          {/* Title and Introduction - Only show on first question */}
+          {currentQuestion === 0 && (
+            <div className="mb-6 text-center pb-6 border-b-2 border-gradient-to-r from-rose-200 via-pink-200 to-purple-200">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full mb-4 shadow-xl animate-pulse">
+                <span className="text-4xl">💕</span>
+              </div>
+              <h1 className="text-3xl md:text-4xl font-extrabold mb-3 bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent leading-tight">
+                Love Language Quiz
+              </h1>
+              <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto mb-5 font-medium">
+                Discover how you express and receive love. Understanding your love language can transform
+                your relationships and help you connect more deeply with those you care about.
+              </p>
+              <div className="bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 p-5 rounded-2xl border-2 border-rose-200 shadow-lg mt-4 backdrop-blur-sm">
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <span className="text-2xl">✨</span>
+                  <h3 className="text-lg font-bold text-gray-900">This Assessment Evaluates:</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-800">
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-rose-500">💬</span>
+                    <span className="font-medium">Words of Affirmation</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-pink-500">⏰</span>
+                    <span className="font-medium">Quality Time</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-purple-500">🎁</span>
+                    <span className="font-medium">Receiving Gifts</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-blue-500">🤝</span>
+                    <span className="font-medium">Acts of Service</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-indigo-500">🫂</span>
+                    <span className="font-medium">Physical Touch</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-teal-500">💝</span>
+                    <span className="font-medium">Your unique preferences</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Progress Section */}
+          <div className="mb-4">
+            <div className="flex justify-between items-center mb-2">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full shadow-md">
+                  <span className="text-white font-bold text-xs">{currentQuestion + 1}</span>
+                </div>
+                <div>
+                  <h2 className="text-sm font-bold text-gray-800">
+                    Question {currentQuestion + 1} of {questions.length}
+                  </h2>
+                </div>
+              </div>
+              <span className="text-lg font-bold bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">
+                {progress.toFixed(0)}%
+              </span>
+            </div>
+            <div className="relative w-full bg-gradient-to-r from-gray-100 to-gray-200 rounded-full h-2 overflow-hidden shadow-inner">
+              <div
+                className="absolute inset-y-0 left-0 bg-gradient-to-r from-rose-400 via-pink-500 to-purple-500 rounded-full transition-all duration-500 ease-out shadow-lg"
+                style={{ width: `${progress}%` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
+              </div>
+            </div>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div
-              className="bg-rose-600 h-2 rounded-full transition-all duration-300"
-              style={{ width: `${progress}%` }}
-            />
+
+          {/* Question */}
+          <div className="mb-4 text-center">
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-rose-100 to-pink-100 rounded-xl mb-3 shadow-md">
+              <span className="text-3xl">💗</span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 text-gray-900 leading-tight">
+              {questions[currentQuestion].text}
+            </h3>
           </div>
+
+          {/* Options */}
+          <div className="space-y-2 mb-4">
+            {questions[currentQuestion].options.map((option, index) => (
+              <button
+                key={index}
+                onClick={() => handleAnswer(option.language)}
+                className="group relative w-full text-left p-3 md:p-4 bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 rounded-xl hover:border-rose-400 hover:shadow-lg transition-all duration-300 hover:scale-[1.01] overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-50/0 to-pink-50/0 group-hover:from-rose-50 group-hover:to-pink-50 transition-all duration-300"></div>
+                <div className="relative flex items-center gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-rose-400 group-hover:to-pink-500 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <span className="text-xs font-bold text-gray-600 group-hover:text-white transition-colors">
+                      {String.fromCharCode(65 + index)}
+                    </span>
+                  </div>
+                  <span className="text-gray-800 group-hover:text-gray-900 font-medium text-sm md:text-base leading-snug flex-grow">
+                    {option.text}
+                  </span>
+                  <svg className="flex-shrink-0 w-5 h-5 text-gray-300 group-hover:text-rose-500 transition-all duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {/* Navigation */}
+          {currentQuestion > 0 && (
+            <div className="flex justify-center">
+              <button
+                onClick={() => {
+                  setCurrentQuestion(currentQuestion - 1)
+                  setAnswers(answers.slice(0, -1))
+                }}
+                className="group flex items-center gap-2 px-4 py-2 bg-white border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-rose-400 hover:text-rose-600 transition-all shadow-md hover:shadow-lg text-sm"
+              >
+                <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                Previous
+              </button>
+            </div>
+          )}
         </div>
-
-        <h1 className="text-2xl font-bold mb-8 text-gray-900">
-          {questions[currentQuestion].text}
-        </h1>
-
-        <div className="space-y-3">
-          {questions[currentQuestion].options.map((option, index) => (
-            <button
-              key={index}
-              onClick={() => handleAnswer(option.language)}
-              className="w-full text-left p-4 border-2 border-gray-200 rounded-lg hover:border-rose-500 hover:bg-rose-50 transition-colors"
-            >
-              <span className="text-gray-800">{option.text}</span>
-            </button>
-          ))}
-        </div>
-
-        {currentQuestion > 0 && (
-          <button
-            onClick={() => {
-              setCurrentQuestion(currentQuestion - 1)
-              setAnswers(answers.slice(0, -1))
-            }}
-            className="mt-6 text-gray-600 hover:text-gray-900"
-          >
-            ← Previous Question
-          </button>
-        )}
       </div>
     </div>
   )

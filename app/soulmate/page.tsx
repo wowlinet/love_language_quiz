@@ -440,6 +440,54 @@ export default function SoulmatePage() {
     <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 py-4 md:py-6">
       <div className="max-w-4xl mx-auto px-4">
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-4 md:p-6 border border-rose-100">
+          {/* Title and Introduction - Only show on first question */}
+          {currentQuestion === 0 && (
+            <div className="mb-6 text-center pb-6 border-b-2 border-gradient-to-r from-rose-200 via-pink-200 to-purple-200">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full mb-4 shadow-xl animate-pulse">
+                <span className="text-4xl">💕</span>
+              </div>
+              <h1 className="text-3xl md:text-4xl font-extrabold mb-3 bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent leading-tight">
+                Discover Your Soulmate Type
+              </h1>
+              <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto mb-5 font-medium">
+                Take this quiz to understand your relationship preferences and discover what you seek
+                in a meaningful partnership. Answer honestly to reveal your ideal soulmate compatibility type.
+              </p>
+              <div className="bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 p-5 rounded-2xl border-2 border-rose-200 shadow-lg mt-4 backdrop-blur-sm">
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <span className="text-2xl">✨</span>
+                  <h3 className="text-lg font-bold text-gray-900">This Assessment Evaluates:</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-800">
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-rose-500">💖</span>
+                    <span className="font-medium">Emotional connection style</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-pink-500">💬</span>
+                    <span className="font-medium">Communication preferences</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-purple-500">🌟</span>
+                    <span className="font-medium">Lifestyle compatibility</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-blue-500">🎯</span>
+                    <span className="font-medium">Core values alignment</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-indigo-500">🔮</span>
+                    <span className="font-medium">Future vision & goals</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-teal-500">💝</span>
+                    <span className="font-medium">Ideal partner qualities</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Progress Section */}
           <div className="mb-4">
             <div className="flex justify-between items-center mb-2">
@@ -478,9 +526,9 @@ export default function SoulmatePage() {
                  '🔮'}
               </span>
             </div>
-            <h2 className="text-xl md:text-2xl font-bold mb-2 leading-tight bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 leading-tight bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
               {question.question}
-            </h2>
+            </h3>
           </div>
 
           {/* Options */}

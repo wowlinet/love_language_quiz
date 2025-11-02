@@ -480,6 +480,46 @@ export default function AmIInLovePage() {
     <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 py-4 md:py-6">
       <div className="max-w-4xl mx-auto px-4">
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-4 md:p-6 border border-rose-100">
+          {/* Title and Introduction - Only show on first question */}
+          {currentQuestion === 0 && (
+            <div className="mb-6 text-center pb-6 border-b-2 border-gradient-to-r from-rose-200 via-pink-200 to-purple-200">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full mb-4 shadow-xl animate-pulse">
+                <span className="text-4xl">💕</span>
+              </div>
+              <h1 className="text-3xl md:text-4xl font-extrabold mb-3 bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent leading-tight">
+                Am I in Love?
+              </h1>
+              <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto mb-5 font-medium">
+                Discover the truth about your feelings with this scientifically-informed quiz.
+                Answer honestly based on how you truly feel.
+              </p>
+              <div className="bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 p-5 rounded-2xl border-2 border-rose-200 shadow-lg mt-4 backdrop-blur-sm">
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <span className="text-2xl">✨</span>
+                  <h3 className="text-lg font-bold text-gray-900">This Assessment Evaluates:</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-800">
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-rose-500">❤️</span>
+                    <span className="font-medium">Commitment and future thinking</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-pink-500">💖</span>
+                    <span className="font-medium">Physical and romantic attraction</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-purple-500">🌟</span>
+                    <span className="font-medium">Authenticity and vulnerability</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/60 p-3 rounded-lg hover:bg-white/80 transition-all">
+                    <span className="text-indigo-500">⚖️</span>
+                    <span className="font-medium">Balance of give and take</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Progress Section */}
           <div className="mb-4">
             <div className="flex justify-between items-center mb-2">
@@ -512,9 +552,9 @@ export default function AmIInLovePage() {
             <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-rose-100 to-pink-100 rounded-xl mb-3 shadow-md">
               <span className="text-3xl">💝</span>
             </div>
-            <h1 className="text-xl md:text-2xl font-bold mb-2 text-gray-900 leading-tight">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 text-gray-900 leading-tight">
               {loveQuestions[currentQuestion].text}
-            </h1>
+            </h3>
           </div>
 
           {/* Options */}
