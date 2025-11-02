@@ -1,0 +1,135 @@
+{
+  "navigation": {
+    "home": "Startseite",
+    "loveLanguageQuiz": "Liebessprachen-Quiz",
+    "amIInLove": "Bin ich verliebt?",
+    "doesHeLoveMe": "Liebt er/sie mich?",
+    "crushQuiz": "Schwarm-Quiz",
+    "soulmate": "Seelenverwandte",
+    "articles": "Artikel"
+  },
+  "home": {
+    "hero": {
+      "title": "Entdecke deine Liebessprache",
+      "subtitle": "Verstehen, wie du Liebe ausdrückst und empfängst, kann deine Beziehungen transformieren",
+      "cta": "Jetzt Quiz machen",
+      "free": "Kostenlos • Keine Registrierung • Sofortige Ergebnisse"
+    },
+    "features": {
+      "title": "Warum unser Quiz machen?",
+      "scientificBased": {
+        "title": "Wissenschaftlich fundiert",
+        "description": "Basierend auf Dr. Gary Chapmans Forschung über die 5 Liebessprachen"
+      },
+      "instant": {
+        "title": "Sofortige Ergebnisse",
+        "description": "Erhalte deine personalisierten Ergebnisse sofort nach Abschluss des Quiz"
+      },
+      "actionable": {
+        "title": "Umsetzbare Einblicke",
+        "description": "Erhalte praktische Tipps zur Verbesserung deiner Beziehungen"
+      }
+    }
+  },
+  "loveLanguageQuiz": {
+    "title": "Liebessprachen-Quiz",
+    "introduction": "Entdecke, wie du Liebe ausdrückst und empfängst. Das Verständnis deiner Liebessprache kann deine Beziehungen transformieren und dir helfen, dich tiefer mit den Menschen zu verbinden, die dir wichtig sind.",
+    "assessmentTitle": "Diese Bewertung untersucht:",
+    "languages": {
+      "wordsOfAffirmation": "Worte der Bestätigung",
+      "qualityTime": "Qualitätszeit",
+      "receivingGifts": "Geschenke empfangen",
+      "actsOfService": "Hilfsbereitschaft",
+      "physicalTouch": "Körperliche Berührung",
+      "uniquePreferences": "Deine einzigartigen Vorlieben"
+    },
+    "progress": {
+      "question": "Frage",
+      "of": "von"
+    },
+    "navigation": {
+      "previous": "Zurück"
+    },
+    "results": {
+      "title": "Quiz abgeschlossen!",
+      "subtitle": "Deine Liebessprachen-Ergebnisse",
+      "description": "Entdecke, wie du Liebe ausdrückst und empfängst",
+      "primaryLanguage": "Deine primäre Liebessprache",
+      "matchScore": "Übereinstimmung",
+      "breakdown": "Vollständige Ergebnisübersicht",
+      "breakdownSubtitle": "Alle fünf Liebessprachen nach deinen Antworten geordnet",
+      "topMatch": "Beste Übereinstimmung",
+      "responses": "Antworten",
+      "tipsTitle": "Tipps für",
+      "tipsSubtitle": "Praktische Ratschläge zur Stärkung deiner Beziehungen",
+      "shareResults": "Ergebnisse teilen",
+      "inviteFriends": "Freunde einladen",
+      "retakeQuiz": "Quiz wiederholen",
+      "readArticles": "Artikel lesen",
+      "importantNote": "Wichtiger Hinweis",
+      "noteText": "Deine Ergebnisse werden lokal in deinem Browser gespeichert. Teile sie mit deinem Partner oder Freunden, um mehr übereinander zu erfahren und eure Beziehungen zu stärken! 💕"
+    }
+  },
+  "amIInLove": {
+    "title": "Bin ich verliebt?",
+    "introduction": "Entdecke die Wahrheit über deine Gefühle mit diesem wissenschaftlich fundierten Quiz. Antworte ehrlich basierend auf dem, was du wirklich fühlst.",
+    "assessmentTitle": "Diese Bewertung untersucht:",
+    "categories": {
+      "commitment": "Engagement und Zukunftsdenken",
+      "trust": "Vertrauen und Verletzlichkeit",
+      "emotional": "Emotionale Verbindung",
+      "thoughts": "Häufigkeit der Gedanken an sie/ihn",
+      "sacrifice": "Bereitschaft zu Opfern",
+      "acceptance": "Akzeptanz von Fehlern"
+    }
+  },
+  "doesHeLoveMe": {
+    "title": "Liebt er/sie mich?",
+    "introduction": "Bewerte die Gesundheit und Tiefe der Liebe in deiner Beziehung. Diese Bewertung analysiert wichtige Verhaltensweisen und Muster, die auf echte, gesunde Liebe hinweisen. Antworte ehrlich basierend auf konsistenten Mustern, die du beobachtet hast.",
+    "assessmentTitle": "Diese Bewertung untersucht:",
+    "categories": {
+      "emotionalSupport": "Emotionale Unterstützung & Empathie",
+      "respect": "Respekt & Vertrauen",
+      "affection": "Zuneigung & Priorisierung",
+      "communication": "Kommunikation & Konfliktlösung",
+      "growth": "Unterstützung für dein Wachstum",
+      "commitment": "Engagement & Zukunftsplanung"
+    }
+  },
+  "crushQuiz": {
+    "title": "Mag mein Schwarm mich?",
+    "introduction": "Fragst du dich, ob dein Schwarm das Gleiche fühlt? Antworte ehrlich basierend auf dem, was du tatsächlich beobachtet hast. Entdecke die Zeichen und Signale, die sie/er möglicherweise zeigt.",
+    "assessmentTitle": "Diese Bewertung untersucht:",
+    "categories": {
+      "communication": "Kommunikationsmuster",
+      "time": "Zeit und Aufmerksamkeit",
+      "bodyLanguage": "Körpersprache-Signale",
+      "effort": "Bemühung und Initiative",
+      "emotional": "Emotionales Engagement",
+      "socialMedia": "Social-Media-Verhalten"
+    }
+  },
+  "soulmate": {
+    "title": "Entdecke deinen Seelenverwandten-Typ",
+    "introduction": "Mache dieses Quiz, um deine Beziehungspräferenzen zu verstehen und herauszufinden, was du in einer bedeutungsvollen Partnerschaft suchst. Antworte ehrlich, um deinen idealen Seelenverwandten-Kompatibilitätstyp zu enthüllen.",
+    "assessmentTitle": "Diese Bewertung untersucht:",
+    "categories": {
+      "emotional": "Emotionaler Verbindungsstil",
+      "communication": "Kommunikationspräferenzen",
+      "lifestyle": "Lebensstil-Kompatibilität",
+      "values": "Übereinstimmung der Kernwerte",
+      "future": "Zukunftsvision & Ziele",
+      "idealPartner": "Ideale Partnerqualitäten"
+    }
+  },
+  "common": {
+    "question": "Frage",
+    "of": "von",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "submit": "Absenden",
+    "loading": "Lädt...",
+    "error": "Ein Fehler ist aufgetreten",
+    "tryAgain": "Erneut versuchen"
+  }
+}

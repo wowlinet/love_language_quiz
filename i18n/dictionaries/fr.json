@@ -1,0 +1,135 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "loveLanguageQuiz": "Quiz Langages d'Amour",
+    "amIInLove": "Suis-je amoureux ?",
+    "doesHeLoveMe": "M'aime-t-il/elle ?",
+    "crushQuiz": "Quiz Béguin",
+    "soulmate": "Âme Sœur",
+    "articles": "Articles"
+  },
+  "home": {
+    "hero": {
+      "title": "Découvrez votre langage d'amour",
+      "subtitle": "Comprendre comment vous exprimez et recevez l'amour peut transformer vos relations",
+      "cta": "Répondre au quiz maintenant",
+      "free": "Gratuit • Sans inscription • Résultats instantanés"
+    },
+    "features": {
+      "title": "Pourquoi faire notre quiz ?",
+      "scientificBased": {
+        "title": "Scientifiquement fondé",
+        "description": "Basé sur les recherches du Dr Gary Chapman sur les 5 langages d'amour"
+      },
+      "instant": {
+        "title": "Résultats instantanés",
+        "description": "Obtenez vos résultats personnalisés immédiatement après avoir terminé le quiz"
+      },
+      "actionable": {
+        "title": "Conseils pratiques",
+        "description": "Recevez des conseils pratiques pour améliorer vos relations"
+      }
+    }
+  },
+  "loveLanguageQuiz": {
+    "title": "Quiz Langages d'Amour",
+    "introduction": "Découvrez comment vous exprimez et recevez l'amour. Comprendre votre langage d'amour peut transformer vos relations et vous aider à vous connecter plus profondément avec ceux qui vous sont chers.",
+    "assessmentTitle": "Cette évaluation examine :",
+    "languages": {
+      "wordsOfAffirmation": "Paroles valorisantes",
+      "qualityTime": "Moments de qualité",
+      "receivingGifts": "Recevoir des cadeaux",
+      "actsOfService": "Services rendus",
+      "physicalTouch": "Toucher physique",
+      "uniquePreferences": "Vos préférences uniques"
+    },
+    "progress": {
+      "question": "Question",
+      "of": "sur"
+    },
+    "navigation": {
+      "previous": "Précédent"
+    },
+    "results": {
+      "title": "Quiz terminé !",
+      "subtitle": "Vos résultats de langage d'amour",
+      "description": "Découvrez comment vous exprimez et recevez l'amour",
+      "primaryLanguage": "Votre langage d'amour principal",
+      "matchScore": "Score de correspondance",
+      "breakdown": "Résultats détaillés complets",
+      "breakdownSubtitle": "Les cinq langages d'amour classés selon vos réponses",
+      "topMatch": "Meilleure correspondance",
+      "responses": "réponses",
+      "tipsTitle": "Conseils pour",
+      "tipsSubtitle": "Conseils pratiques pour renforcer vos relations",
+      "shareResults": "Partager les résultats",
+      "inviteFriends": "Inviter des amis",
+      "retakeQuiz": "Refaire le quiz",
+      "readArticles": "Lire les articles",
+      "importantNote": "Note importante",
+      "noteText": "Vos résultats sont enregistrés localement dans votre navigateur. Partagez-les avec votre partenaire ou vos amis pour mieux vous connaître et renforcer vos relations ! 💕"
+    }
+  },
+  "amIInLove": {
+    "title": "Suis-je amoureux ?",
+    "introduction": "Découvrez la vérité sur vos sentiments avec ce quiz scientifiquement informé. Répondez honnêtement en fonction de ce que vous ressentez vraiment.",
+    "assessmentTitle": "Cette évaluation examine :",
+    "categories": {
+      "commitment": "Engagement et réflexion sur l'avenir",
+      "trust": "Confiance et vulnérabilité",
+      "emotional": "Connexion émotionnelle",
+      "thoughts": "Fréquence des pensées à son sujet",
+      "sacrifice": "Volonté de sacrifice",
+      "acceptance": "Acceptation des défauts"
+    }
+  },
+  "doesHeLoveMe": {
+    "title": "M'aime-t-il/elle ?",
+    "introduction": "Évaluez la santé et la profondeur de l'amour dans votre relation. Cette évaluation analyse les comportements et les schémas clés qui indiquent un amour véritable et sain. Répondez honnêtement en fonction des schémas cohérents que vous avez observés.",
+    "assessmentTitle": "Cette évaluation examine :",
+    "categories": {
+      "emotionalSupport": "Soutien émotionnel & empathie",
+      "respect": "Respect & confiance",
+      "affection": "Affection & priorisation",
+      "communication": "Communication & résolution de conflits",
+      "growth": "Soutien de votre croissance",
+      "commitment": "Engagement & planification de l'avenir"
+    }
+  },
+  "crushQuiz": {
+    "title": "Mon béguin m'aime-t-il ?",
+    "introduction": "Vous vous demandez si votre béguin ressent la même chose ? Répondez honnêtement en fonction de ce que vous avez réellement observé. Découvrez les signes et les signaux qu'il/elle pourrait montrer.",
+    "assessmentTitle": "Cette évaluation examine :",
+    "categories": {
+      "communication": "Modèles de communication",
+      "time": "Temps et attention accordés",
+      "bodyLanguage": "Signaux du langage corporel",
+      "effort": "Effort et initiative",
+      "emotional": "Engagement émotionnel",
+      "socialMedia": "Comportement sur les réseaux sociaux"
+    }
+  },
+  "soulmate": {
+    "title": "Découvrez votre type d'âme sœur",
+    "introduction": "Répondez à ce quiz pour comprendre vos préférences relationnelles et découvrir ce que vous recherchez dans un partenariat significatif. Répondez honnêtement pour révéler votre type de compatibilité d'âme sœur idéal.",
+    "assessmentTitle": "Cette évaluation examine :",
+    "categories": {
+      "emotional": "Style de connexion émotionnelle",
+      "communication": "Préférences de communication",
+      "lifestyle": "Compatibilité de style de vie",
+      "values": "Alignement des valeurs fondamentales",
+      "future": "Vision de l'avenir & objectifs",
+      "idealPartner": "Qualités du partenaire idéal"
+    }
+  },
+  "common": {
+    "question": "Question",
+    "of": "sur",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "submit": "Soumettre",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "tryAgain": "Réessayer"
+  }
+}

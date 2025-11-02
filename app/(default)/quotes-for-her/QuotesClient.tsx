@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import quotesData from '@/lib/quotes-for-her.json'
 
 interface Quote {
@@ -196,12 +197,12 @@ export default function QuotesClient() {
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
               Take our comprehensive quiz to understand how you express and receive love
             </p>
-            <a
+            <Link
               href="/test"
               className="inline-block bg-white text-rose-600 font-semibold px-8 py-4 rounded-full hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
             >
               Take the Love Language Quiz
-            </a>
+            </Link>
           </div>
           {/* Decorative circles */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>

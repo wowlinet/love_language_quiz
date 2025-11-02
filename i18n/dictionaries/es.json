@@ -1,0 +1,135 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "loveLanguageQuiz": "Test de Lenguajes del Amor",
+    "amIInLove": "¿Estoy enamorado?",
+    "doesHeLoveMe": "¿Me ama?",
+    "crushQuiz": "Test de Enamoramiento",
+    "soulmate": "Alma Gemela",
+    "articles": "Artículos"
+  },
+  "home": {
+    "hero": {
+      "title": "Descubre tu lenguaje del amor",
+      "subtitle": "Entender cómo expresas y recibes amor puede transformar tus relaciones",
+      "cta": "Hacer el test ahora",
+      "free": "Gratis • Sin registro • Resultados instantáneos"
+    },
+    "features": {
+      "title": "¿Por qué hacer nuestro test?",
+      "scientificBased": {
+        "title": "Científicamente fundamentado",
+        "description": "Basado en la investigación del Dr. Gary Chapman sobre los 5 lenguajes del amor"
+      },
+      "instant": {
+        "title": "Resultados instantáneos",
+        "description": "Obtén tus resultados personalizados inmediatamente después de completar el test"
+      },
+      "actionable": {
+        "title": "Consejos prácticos",
+        "description": "Recibe consejos prácticos para mejorar tus relaciones"
+      }
+    }
+  },
+  "loveLanguageQuiz": {
+    "title": "Test de Lenguajes del Amor",
+    "introduction": "Descubre cómo expresas y recibes amor. Comprender tu lenguaje del amor puede transformar tus relaciones y ayudarte a conectar más profundamente con las personas que te importan.",
+    "assessmentTitle": "Esta evaluación examina:",
+    "languages": {
+      "wordsOfAffirmation": "Palabras de afirmación",
+      "qualityTime": "Tiempo de calidad",
+      "receivingGifts": "Recibir regalos",
+      "actsOfService": "Actos de servicio",
+      "physicalTouch": "Toque físico",
+      "uniquePreferences": "Tus preferencias únicas"
+    },
+    "progress": {
+      "question": "Pregunta",
+      "of": "de"
+    },
+    "navigation": {
+      "previous": "Anterior"
+    },
+    "results": {
+      "title": "¡Test completado!",
+      "subtitle": "Tus resultados de lenguaje del amor",
+      "description": "Descubre cómo expresas y recibes amor",
+      "primaryLanguage": "Tu lenguaje del amor principal",
+      "matchScore": "Puntuación de coincidencia",
+      "breakdown": "Desglose completo de resultados",
+      "breakdownSubtitle": "Los cinco lenguajes del amor clasificados según tus respuestas",
+      "topMatch": "Mejor coincidencia",
+      "responses": "respuestas",
+      "tipsTitle": "Consejos para",
+      "tipsSubtitle": "Consejos prácticos para fortalecer tus relaciones",
+      "shareResults": "Compartir resultados",
+      "inviteFriends": "Invitar amigos",
+      "retakeQuiz": "Repetir test",
+      "readArticles": "Leer artículos",
+      "importantNote": "Nota importante",
+      "noteText": "Tus resultados se guardan localmente en tu navegador. ¡Compártelos con tu pareja o amigos para conocerse mejor y fortalecer sus relaciones! 💕"
+    }
+  },
+  "amIInLove": {
+    "title": "¿Estoy enamorado?",
+    "introduction": "Descubre la verdad sobre tus sentimientos con este test científicamente fundamentado. Responde honestamente según lo que realmente sientes.",
+    "assessmentTitle": "Esta evaluación examina:",
+    "categories": {
+      "commitment": "Compromiso y pensamiento futuro",
+      "trust": "Confianza y vulnerabilidad",
+      "emotional": "Conexión emocional",
+      "thoughts": "Frecuencia de pensamientos sobre él/ella",
+      "sacrifice": "Disposición a sacrificarse",
+      "acceptance": "Aceptación de defectos"
+    }
+  },
+  "doesHeLoveMe": {
+    "title": "¿Me ama?",
+    "introduction": "Evalúa la salud y profundidad del amor en tu relación. Esta evaluación analiza comportamientos y patrones clave que indican amor genuino y saludable. Responde honestamente según los patrones consistentes que hayas observado.",
+    "assessmentTitle": "Esta evaluación examina:",
+    "categories": {
+      "emotionalSupport": "Apoyo emocional y empatía",
+      "respect": "Respeto y confianza",
+      "affection": "Afecto y priorización",
+      "communication": "Comunicación y resolución de conflictos",
+      "growth": "Apoyo a tu crecimiento",
+      "commitment": "Compromiso y planificación futura"
+    }
+  },
+  "crushQuiz": {
+    "title": "¿Le gusto a mi enamoramiento?",
+    "introduction": "¿Te preguntas si tu enamoramiento siente lo mismo? Responde honestamente según lo que realmente has observado. Descubre las señales que podría estar mostrando.",
+    "assessmentTitle": "Esta evaluación examina:",
+    "categories": {
+      "communication": "Patrones de comunicación",
+      "time": "Tiempo y atención dados",
+      "bodyLanguage": "Señales de lenguaje corporal",
+      "effort": "Esfuerzo e iniciativa",
+      "emotional": "Compromiso emocional",
+      "socialMedia": "Comportamiento en redes sociales"
+    }
+  },
+  "soulmate": {
+    "title": "Descubre tu tipo de alma gemela",
+    "introduction": "Haz este test para comprender tus preferencias en relaciones y descubrir lo que buscas en una pareja significativa. Responde honestamente para revelar tu tipo ideal de compatibilidad de alma gemela.",
+    "assessmentTitle": "Esta evaluación examina:",
+    "categories": {
+      "emotional": "Estilo de conexión emocional",
+      "communication": "Preferencias de comunicación",
+      "lifestyle": "Compatibilidad de estilo de vida",
+      "values": "Alineación de valores fundamentales",
+      "future": "Visión del futuro y objetivos",
+      "idealPartner": "Cualidades de la pareja ideal"
+    }
+  },
+  "common": {
+    "question": "Pregunta",
+    "of": "de",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "submit": "Enviar",
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "tryAgain": "Intentar de nuevo"
+  }
+}

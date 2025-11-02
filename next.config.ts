@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // No trailingSlash config - let both /de and /de/ work
 };
 
 export default nextConfig;

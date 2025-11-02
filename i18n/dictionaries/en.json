@@ -1,0 +1,135 @@
+{
+  "navigation": {
+    "home": "Home",
+    "loveLanguageQuiz": "Love Language Quiz",
+    "amIInLove": "Am I in Love?",
+    "doesHeLoveMe": "Does He/She Love Me?",
+    "crushQuiz": "Crush Quiz",
+    "soulmate": "Soulmate",
+    "articles": "Articles"
+  },
+  "home": {
+    "hero": {
+      "title": "Discover Your Love Language",
+      "subtitle": "Understanding how you express and receive love can transform your relationships",
+      "cta": "Take the Quiz Now",
+      "free": "Free • No registration • Instant results"
+    },
+    "features": {
+      "title": "Why Take Our Quiz?",
+      "scientificBased": {
+        "title": "Scientifically Based",
+        "description": "Based on Dr. Gary Chapman's research on the 5 love languages"
+      },
+      "instant": {
+        "title": "Instant Results",
+        "description": "Get your personalized results immediately after completing the quiz"
+      },
+      "actionable": {
+        "title": "Actionable Insights",
+        "description": "Receive practical tips to improve your relationships"
+      }
+    }
+  },
+  "loveLanguageQuiz": {
+    "title": "Love Language Quiz",
+    "introduction": "Discover how you express and receive love. Understanding your love language can transform your relationships and help you connect more deeply with those you care about.",
+    "assessmentTitle": "This Assessment Evaluates:",
+    "languages": {
+      "wordsOfAffirmation": "Words of Affirmation",
+      "qualityTime": "Quality Time",
+      "receivingGifts": "Receiving Gifts",
+      "actsOfService": "Acts of Service",
+      "physicalTouch": "Physical Touch",
+      "uniquePreferences": "Your unique preferences"
+    },
+    "progress": {
+      "question": "Question",
+      "of": "of"
+    },
+    "navigation": {
+      "previous": "Previous"
+    },
+    "results": {
+      "title": "Quiz Completed!",
+      "subtitle": "Your Love Language Results",
+      "description": "Discover how you express and receive love",
+      "primaryLanguage": "Your Primary Love Language",
+      "matchScore": "Match Score",
+      "breakdown": "Complete Results Breakdown",
+      "breakdownSubtitle": "All five love languages ranked by your responses",
+      "topMatch": "Top Match",
+      "responses": "responses",
+      "tipsTitle": "Tips for",
+      "tipsSubtitle": "Practical advice to strengthen your relationships",
+      "shareResults": "Share Results",
+      "inviteFriends": "Invite Friends",
+      "retakeQuiz": "Retake Quiz",
+      "readArticles": "Read Articles",
+      "importantNote": "Important Note",
+      "noteText": "Your results are saved locally in your browser. Share them with your partner or friends to learn more about each other and strengthen your relationships! 💕"
+    }
+  },
+  "amIInLove": {
+    "title": "Am I in Love?",
+    "introduction": "Discover the truth about your feelings with this scientifically-informed quiz. Answer honestly based on how you truly feel.",
+    "assessmentTitle": "This Assessment Evaluates:",
+    "categories": {
+      "commitment": "Commitment and future thinking",
+      "trust": "Trust and vulnerability",
+      "emotional": "Emotional connection",
+      "thoughts": "Frequency of thoughts about them",
+      "sacrifice": "Willingness to sacrifice",
+      "acceptance": "Acceptance of flaws"
+    }
+  },
+  "doesHeLoveMe": {
+    "title": "Does He/She Love Me?",
+    "introduction": "Evaluate the health and depth of love in your relationship. This assessment analyzes key behaviors and patterns that indicate genuine, healthy love. Answer honestly based on consistent patterns you've observed.",
+    "assessmentTitle": "This Assessment Evaluates:",
+    "categories": {
+      "emotionalSupport": "Emotional support & empathy",
+      "respect": "Respect & trust",
+      "affection": "Affection & prioritization",
+      "communication": "Communication & conflict resolution",
+      "growth": "Support for your growth",
+      "commitment": "Commitment & future planning"
+    }
+  },
+  "crushQuiz": {
+    "title": "Does My Crush Like Me?",
+    "introduction": "Wondering if your crush feels the same way? Answer honestly based on what you've actually observed. Discover the signs and signals they might be showing.",
+    "assessmentTitle": "This Assessment Evaluates:",
+    "categories": {
+      "communication": "Communication patterns",
+      "time": "Time and attention given",
+      "bodyLanguage": "Body language signals",
+      "effort": "Effort and initiative",
+      "emotional": "Emotional engagement",
+      "socialMedia": "Social media behavior"
+    }
+  },
+  "soulmate": {
+    "title": "Discover Your Soulmate Type",
+    "introduction": "Take this quiz to understand your relationship preferences and discover what you seek in a meaningful partnership. Answer honestly to reveal your ideal soulmate compatibility type.",
+    "assessmentTitle": "This Assessment Evaluates:",
+    "categories": {
+      "emotional": "Emotional connection style",
+      "communication": "Communication preferences",
+      "lifestyle": "Lifestyle compatibility",
+      "values": "Core values alignment",
+      "future": "Future vision & goals",
+      "idealPartner": "Ideal partner qualities"
+    }
+  },
+  "common": {
+    "question": "Question",
+    "of": "of",
+    "previous": "Previous",
+    "next": "Next",
+    "submit": "Submit",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "tryAgain": "Try Again"
+  }
+}
